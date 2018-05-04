@@ -14,3 +14,5 @@
 <header>
 	CI App
 </header>
+
+<div class="container">
