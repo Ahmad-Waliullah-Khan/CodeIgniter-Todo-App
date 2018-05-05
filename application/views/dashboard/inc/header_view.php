@@ -8,6 +8,8 @@
 
 	<script src="<?php echo base_url() ?>public/js/jquery.js"></script>
 	<script src="<?php echo base_url() ?>public/js/bootstrap.js"></script>
+  <script src="<?php echo base_url() ?>public/js/oli/dashboard/template.js"></script>
+  <script src="<?php echo base_url() ?>public/js/oli/dashboard.js"></script>
 </head>
 <body>
 
