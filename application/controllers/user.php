@@ -6,6 +6,17 @@ class User extends CI_Controller {
 		$this->load->model('user_model');
 	}
 
+	public function login() {
+		
+		//will come from database
+		$this->sesion->$array = array(
+			'user_id' => '1'
+		);
+		
+		$this->session->set_userdata( $array );
+	}
+
+
 	public function test_get() {
 		$result = $this->user_model->get(1);
 		print_r($result);	
