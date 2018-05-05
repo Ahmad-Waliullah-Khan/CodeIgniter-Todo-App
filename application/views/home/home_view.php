@@ -23,6 +23,9 @@
 			</div>
 
 		</form>
+
+		<a href="<?php echo site_url('home/register');?>">Register</a>
+
 	</div>
 </div>
 

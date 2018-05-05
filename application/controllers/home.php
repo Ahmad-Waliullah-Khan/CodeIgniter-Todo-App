@@ -7,6 +7,12 @@ class Home extends CI_Controller {
 		$this->load->view('home/inc/footer_view');
 	}
 
+	public function register() {
+		$this->load->view('home/inc/header_view');
+		$this->load->view('home/register_view');
+		$this->load->view('home/inc/footer_view');
+	}
+
 	// public function test_code() {
 
 	// 	echo hash('sha256', '123456' . SALT);
