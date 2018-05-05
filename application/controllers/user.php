@@ -13,7 +13,7 @@ class User extends CI_Controller {
 		
 		$result = $this->user_model->get([
 			'login' => $login,
-			'password' => $password
+			'password' => hash('sha256', $password . SALT)
 		]);
 
 		$this->output->set_content_type('application_json');
