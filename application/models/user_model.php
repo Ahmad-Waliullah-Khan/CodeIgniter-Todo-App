@@ -1,6 +1,9 @@
 <?php 
 class User_model extends CI_Model {
 
+
+	// ---------------------------------------------------------------------
+	
 	/**
 	*
 	*
@@ -24,6 +27,8 @@ class User_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	// ---------------------------------------------------------------------
+	
 	/**
 	*
 	* @param array $data
@@ -34,6 +39,8 @@ class User_model extends CI_Model {
 	* All : $this->user_mdel->get();
 	*/
 
+	// ---------------------------------------------------------------------
+	
 	public function insert($data) {
 		$this->db->insert('user', $data);
 
@@ -41,7 +48,8 @@ class User_model extends CI_Model {
 
 	}
 
-
+	// ---------------------------------------------------------------------
+	
 	/**
 	*
 	* @usage
@@ -57,6 +65,8 @@ class User_model extends CI_Model {
 
 	}
 
+	// ---------------------------------------------------------------------
+	
 	/**
 	*
 	* @usage
@@ -70,4 +80,7 @@ class User_model extends CI_Model {
 		return $this->db->affected_rows();
 
 	}
+	
+	// ---------------------------------------------------------------------
+	
 }

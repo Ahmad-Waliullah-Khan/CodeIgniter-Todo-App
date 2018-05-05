@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-md-6" >
-		<form id="login_form" class="form-horizontal" method="POST" action="<?php echo site_url('user/login') ?>">
+		<form id="login_form" class="form-horizontal" method="POST" action="<?php echo site_url('api/login') ?>">
 			
 			<div class="control-group">
 				<label class="control-label">Login</label>
@@ -24,7 +24,8 @@
 
 		</form>
 
-		<a href="<?php echo site_url('home/register');?>">Register</a>
+		
+		<a class="btn btn-success" href="<?php echo site_url('home/register');?>">Register</a>
 
 	</div>
 </div>
