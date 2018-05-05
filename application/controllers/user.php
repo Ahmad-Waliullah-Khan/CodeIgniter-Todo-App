@@ -7,13 +7,41 @@ class User extends CI_Controller {
 	}
 
 	public function login() {
+
+		$login = $this->input->post('login');
+		$password = $this->input->post('password');
 		
+		$result = $this->user_model->get([
+			'login' => $login,
+			'password' => $password
+		]);
+
+		$this->output->set_content_type('application_json');
+
+		if($result) {
+			$this->session->set_userdata(['user_id' => $result[0]['user_id']]);
+			
+			$this->output->set_output(json_encode([
+				'result' => 1
+			]));
+
+			return false;
+		}
+
+		$this->output->set_output(json_encode([
+				'result' => 0
+			]));
+
+		// print_r($result);
+
+		// die;
+
 		//will come from database
-		$this->sesion->$array = array(
-			'user_id' => '1'
-		);
+		// $this->sesion->$array = array(
+		// 	'user_id' => '1'
+		// );
 		
-		$this->session->set_userdata( $array );
+		// $this->session->set_userdata( $array );
 	}
 
 
