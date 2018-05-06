@@ -31,6 +31,7 @@ var Event = function() {
                     Result.success('Todo Created Successfully');
                     var output = Template.todo(obj.data[0]);
                     $('#list_todo').prepend(output);
+                    $('#todo_input').val("");
 
                 } else {    
                     Result.error(obj.error);

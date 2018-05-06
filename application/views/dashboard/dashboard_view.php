@@ -3,7 +3,7 @@
     <div id="dashboard-side" class="col-md-4">
         <form id="create_todo" class="form-horizontal" method="post" action="<?=site_url('api/create_todo')?>">
             <div class="input-append">
-                <input type="text" name="content" placeholder="Create New Todo Item" />
+                <input id="todo_input" type="text" name="content" placeholder="Create New Todo Item" />
                 <input type="submit" class="btn btn-success" value="Create" />
             </div>
         </form>
