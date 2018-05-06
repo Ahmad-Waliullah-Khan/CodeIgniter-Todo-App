@@ -9,3 +9,7 @@
 	min-height: 500px;
 	/*min-width: 30%;*/
 }
+
+.hide {
+	display: none;
+}
