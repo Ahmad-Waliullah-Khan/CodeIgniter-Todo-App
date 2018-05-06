@@ -17,8 +17,22 @@ var Event = function() {
     
     var create_todo = function() {
         $("#create_todo").submit(function(evt) {
+            // evt = evt || window.event;
+            evt.preventDefault();
+            // event.stopImmediatePropagation();
             console.log('create_todo clicked');
-            return false;
+
+            var url = $(this).attr('action');
+            var postData = $(this).serialize();
+
+            $.post(url, postData, function(obj){
+                if(obj.result == 1)
+                {
+                    Result.success();
+                } else {    
+                    Result.error();
+                }
+            }, 'json');
         });
     };
     

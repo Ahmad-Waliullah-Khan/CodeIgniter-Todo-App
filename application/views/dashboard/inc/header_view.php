@@ -10,6 +10,8 @@
 	<script src="<?php echo base_url() ?>public/js/bootstrap.js"></script>
   <script src="<?php echo base_url() ?>public/js/oli/dashboard/template.js"></script>
   <script src="<?php echo base_url() ?>public/js/oli/dashboard.js"></script>
+  <script src="<?php echo base_url() ?>public/js/oli/dashboard/result.js"></script>
+  <script src="<?php echo base_url() ?>public/js/oli/dashboard/event.js"></script>
 
   <script type="text/javascript">
     //Init the Dashboard Application

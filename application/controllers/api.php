@@ -1,5 +1,8 @@
 <?php 
 
+//Set time zone
+date_default_timezone_set('Asia/Kolkata'); 
+
 class Api extends CI_Controller {
 
 	// ---------------------------------------------------------------------
@@ -131,6 +134,36 @@ class Api extends CI_Controller {
 
 		$this->_require_login();
 
+		$this->form_validation->set_rules('content', 'Content', 'required|max_length[255]');
+
+		if($this->form_validation->run() === false)
+		{
+			$this->output->set_output(json_encode([
+				'result' => 0,
+				'error' => $this->form_validation->error_array()
+			]));
+			
+			return false;
+		}
+
+		$dateSql = date('Y-m-d h:i:sa');
+
+		$result = $this->db->insert('todo', [
+			'content' => $this->input->post('content'),
+			'user_id' => $this->session->userdata('user_id'),
+			'date_added' => $dateSql,
+			'date_modified' => $dateSql
+		]);
+
+		if ($result) {
+			$this->output->set_output(json_encode(['result' => 1]));
+			return false;
+		}
+		$this->output->set_output(json_encode([
+			'result' => 0,
+			'error' => 'Could not insert record'
+		]));
+
 	}
 
 	// ---------------------------------------------------------------------
@@ -154,6 +187,8 @@ class Api extends CI_Controller {
 	
 	public function create_note () {
 		$this->_require_login();
+
+
 
 	}
 
