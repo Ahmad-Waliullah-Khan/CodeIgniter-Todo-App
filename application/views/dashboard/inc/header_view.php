@@ -7,6 +7,7 @@
     
     <script src="<?=base_url()?>public/js/jquery.js"></script>
     <script src="<?=base_url()?>public/js/bootstrap.js"></script>
+
     <script src="<?=base_url()?>public/js/oli/dashboard/result.js"></script>
     <script src="<?=base_url()?>public/js/oli/dashboard/event.js"></script>
     <script src="<?=base_url()?>public/js/oli/dashboard/template.js"></script>
