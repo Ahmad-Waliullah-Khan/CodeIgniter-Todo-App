@@ -3,7 +3,7 @@ var Event = function() {
     // ------------------------------------------------------------------------
   
     this.__construct = function() {
-        console.log('Event Created');
+        // console.log('Event Created');
         Result = new Result();
         create_todo();
         create_note();
@@ -20,7 +20,7 @@ var Event = function() {
             // evt = evt || window.event;
             evt.preventDefault();
             // event.stopImmediatePropagation();
-            console.log('create_todo clicked');
+            // console.log('create_todo clicked');
 
             var url = $(this).attr('action');
             var postData = $(this).serialize();
@@ -29,6 +29,9 @@ var Event = function() {
                 if(obj.result == 1)
                 {
                     Result.success('Todo Created Successfully');
+                    var output = Template.todo(obj.data[0]);
+                    $('#list_todo').prepend(output);
+
                 } else {    
                     Result.error(obj.error);
                 }

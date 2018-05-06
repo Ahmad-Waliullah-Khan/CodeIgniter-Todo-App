@@ -4,7 +4,7 @@ var Dashboard = function() {
 	var self = this;
 
 	this.__construct = function() {
-		console.log('Dashboard Created');
+		// console.log('Dashboard Created');
 		Template = new Template();
 		Event = new Event();
 		// Result = new Result();
@@ -17,15 +17,13 @@ var Dashboard = function() {
 
 	// --------------------------------------------------------------------
 	
-	this.__construct();
-
 	var load_todo = function() {
 		$.get('api/get_todo', function(obj) {
 			var output = '';
 			for(var i = 0; i<obj.length; i++) {
-				output += Template.todo(o[i]);
+				output += Template.todo(obj[i]);
 			}
-			$('#list_todo').html(output)
+			$('#list_todo').html(output);
 		}, 'json');
 
 	};

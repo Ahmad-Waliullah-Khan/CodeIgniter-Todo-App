@@ -130,6 +130,30 @@ class Api extends CI_Controller {
 
 	// ---------------------------------------------------------------------
 	
+	public function get_todo ($id =null) {
+		$this->_require_login();
+
+		if($id != null) {
+			$this->db->where([
+				'todo_id' => $id,
+				'user_id' => $this->session->userdata('user_id')
+			]);
+		} else {
+			$this->db->where('user_id', $this->session->userdata('user_id'));
+		}
+		
+		$this->db->order_by("todo_id", "desc");
+		$query = $this->db->get('todo');
+		$result = $query->result_array();
+
+		$this->output->set_output(json_encode($result));
+
+		// print_r($result);
+
+	}
+
+	// ---------------------------------------------------------------------
+	
 	public function create_todo () {
 
 		$this->_require_login();
@@ -156,7 +180,14 @@ class Api extends CI_Controller {
 		]);
 
 		if ($result) {
-			$this->output->set_output(json_encode(['result' => 1]));
+
+			//Get the freshest Todo entry for the DOM
+			$query = $this->db->get_where('todo', ['todo_id' => $this->db->insert_id()]);
+			$result = $query->result();
+			$this->output->set_output(json_encode([
+				'result' => 1,
+				'data' => $result = $query->result()
+			]));
 			return false;
 		}
 		$this->output->set_output(json_encode([
@@ -181,6 +212,15 @@ class Api extends CI_Controller {
 		$this->_require_login();
 		
 		$todo_id = $this->input->post('todo_id');
+	}
+
+	// ---------------------------------------------------------------------
+	
+	public function get_note () {
+		$this->_require_login();
+
+
+
 	}
 
 	// ---------------------------------------------------------------------
