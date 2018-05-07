@@ -7,6 +7,7 @@ var Event = function() {
         Result = new Result();
         create_todo();
         create_note();
+        update_note_display();
         update_todo();
         update_note();
         delete_todo();
@@ -111,12 +112,30 @@ var Event = function() {
 
     // ------------------------------------------------------------------------
 
+    var update_note_display = function() {
+        // console.log('!!!!!!!!');
+        $("body").on('click', '.note_update_display', function(e){
+            // alert(2);
+            e.preventDefault();
+            var note_id = $(this).data('id');
+            var output = Template.note_edit(note_id);
+            $('#note_edit_container_'+ note_id).html(output);
+        });
+
+        $("body").on('click', '.note_edit_cancel', function(e) {
+            e.preventDefault();
+            $(this).parents('.note_edit_container').html('');
+        });
+    };
+    
+    // ------------------------------------------------------------------------
+
     var update_note = function() {
         
     };
     
     // ------------------------------------------------------------------------
-    
+  
     var delete_todo = function() {
 
         $('body').on('click', '.todo_delete', function (evt) {
