@@ -6,7 +6,7 @@ class Test_User extends CI_Controller {
 	public function __construct () {
 		parent:: __construct();
 		$this->load->model('user_model');
-		$this->load->helper('email');
+
 	}
 
 	// ---------------------------------------------------------------------
@@ -125,10 +125,23 @@ class Test_User extends CI_Controller {
 	// ---------------------------------------------------------------------
 	
 	public function test_get() {
-		$result = $this->user_model->get(1);
-		print_r($result);	
+		// $result = $this->user_model->get(1);
+		// print_r($result);
 
-		//Profiler to dumb database info for debugging
+		// $result = $this->user_model->get(array(
+		// 	'user_id' => '3',
+		// 	'login' => 'Oli'
+		// ));
+		// echo '<pre>';
+		// print_r($result);	
+
+		$result = $this->user_model->get(array(
+			'login !=' => 'Oli'
+		));
+		echo '<pre>';
+		print_r($result);
+
+		//Profiler to dump database info for debugging
 		$this->output->enable_profiler();
 	}
 
