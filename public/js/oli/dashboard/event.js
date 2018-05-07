@@ -10,6 +10,7 @@ var Event = function() {
         update_note_display();
         update_todo();
         update_note();
+        toggle_note();
         delete_todo();
         delete_note();
     };
@@ -120,6 +121,12 @@ var Event = function() {
             var note_id = $(this).data('id');
             var output = Template.note_edit(note_id);
             $('#note_edit_container_'+ note_id).html(output);
+
+            //Display data after the Template is created
+            var title = $('#note_title_' + note_id).html();
+            var content = $('#note_content_' + note_id).html();
+            $('#note_edit_container_'+ note_id).find('.title').val(title);
+            $('#note_edit_container_'+ note_id).find('.content').val(content);
         });
 
         $("body").on('click', '.note_edit_cancel', function(e) {
@@ -131,6 +138,31 @@ var Event = function() {
     // ------------------------------------------------------------------------
 
     var update_note = function() {
+         $("body").on('submit', '.note_edit_form', function(e){
+            e.preventDefault();
+
+            var url = $(this).attr('action');
+            var postData = {
+                note_id : $(this).find('.note_id').val(),
+                title : $(this).find('.title').val(),
+                content : $(this).find('.content').val()
+            };
+            var title = $(this).find('.title').val();
+            console.log(title);
+
+            $.post(url, postData, function(o){
+                if (o.result == 1) {
+                    Result.success("Successfully Updated Note.");
+                    //Repopulate the DOM with newly updated note
+                    $("#note_title_"+ postData.note_id).html(postData.title);
+                    $("#note_content_"+ postData.note_id).html(postData.content);
+                    //hide the Update Note Form after editing
+                    $('.note_edit_container').html('');
+                } else {
+                    Result.error('Error Saving!');
+                }
+            }, 'json');
+        });
         
     };
     
@@ -167,8 +199,20 @@ var Event = function() {
         
     };
     
-    // ------------------------------------------------------------------------
+// ------------------------------------------------------------------------
+
+    var toggle_note = function() {
+        $('body').on('click', '.note_toggle', function(e){
+            e.preventDefault();
+            var note_id = $(this).data('id');
+            console.log('note_id');
+            $('#note_content_' + note_id).toggleClass('hide');
+        });
+    };
     
+    // ------------------------------------------------------------------------    
+
+
     this.__construct();
     
 };

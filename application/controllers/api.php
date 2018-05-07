@@ -349,8 +349,37 @@ class Api extends CI_Controller {
 	
 	public function update_note () {
 		$this->_require_login();
+
+		$note_id = $this->input->post('note_id');
+
+		$dateSql = date('Y-m-d h:i:sa');
+
+		$result = $this->note_model->update([
+			'title' => $this->input->post('title'),
+			'content' => $this->input->post('content'),
+			'date_modified' => $dateSql
+		], $note_id);
+		// $this->db->where(['todo_id' => $todo_id]);
+		// $this->db->update('todo', [
+		// 	'completed' => $completed
+		// ]);
+
+		// $result = $this->db->affected_rows();
+
+		// if ($result) {
+		// 	$this->output->set_output(json_encode([
+		// 		'result' => 1
+		// 	]));
+
+		// 	return false;
+		// }
+
+		//Do not check the $result because if no affected rows happen they will think it is an error
+		$this->output->set_output(json_encode([
+				'result' => 1
+			]));
+		return false;
 		
-		$note_id = $this->input->post('note_id');	
 	}
 
 	// ---------------------------------------------------------------------

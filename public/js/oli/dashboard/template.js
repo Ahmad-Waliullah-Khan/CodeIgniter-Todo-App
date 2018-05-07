@@ -35,11 +35,11 @@ var Template = function() {
     this.note = function(obj) {
         var output = '';
         output += '<div id="note_'+ obj.note_id +'">';
-        output += '<span>' + obj.title + '</span>';
-        output += '<span>' + obj.content + '</span>';
+        output += '<span><a class="note_toggle" data-id="'+ obj.note_id +'" id="note_title_'+ obj.note_id +'" href="#">' + obj.title + '</a></span> ';
         output += '<a class="note_update_display" data-id="'+ obj.note_id +'" href="#">Edit</a>';
         output += '<a data-id="'+ obj.note_id +'" class="note_delete" href="api/delete_note">Delete</a>';
         output += '<div class="note_edit_container" id="note_edit_container_'+ obj.note_id +'"></div>';
+        output += '<div class="hide" id="note_content_'+ obj.note_id +'">'+ obj.content +'</div>';
         output += '</div>';
         return output;
     };
@@ -49,11 +49,12 @@ var Template = function() {
     this.note_edit = function(note_id) {
         var output = '';
         
-        output += '<form method="post" action="api/update_note">';
-        output += '<input type="text" name="title" />';
-        output += '<textarea name="content"></textarea>';
-        output += '<input type="submit" value="Save"/>';
-        output += '<input type="submit" class="note_edit_cancel" value="Cancel"/>';
+        output += '<form method="post" class="note_edit_form" action="api/update_note">';
+            output += '<input class="title" type="text" name="title" />';
+            output += '<input class="note_id" type="hidden" name="note_id" value="'+ note_id +'" />';
+            output += '<textarea class="content" name="content"></textarea>';
+            output += '<input type="submit" value="Save"/>';
+            output += '<input type="submit" class="note_edit_cancel" value="Cancel"/>';
         output += '</form>';
 
         return output;
