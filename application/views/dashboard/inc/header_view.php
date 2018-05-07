@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <title>CodeIgniter App</title>
-    <link rel="stylesheet" href="<?=base_url()?>public/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?=base_url()?>public/third-party/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?=base_url()?>public/css/style.css" />
     
-    <script src="<?=base_url()?>public/js/jquery.js"></script>
-    <script src="<?=base_url()?>public/js/bootstrap.js"></script>
+    <script src="<?=base_url()?>public/third-party/js/jquery.js"></script>
+    <script src="<?=base_url()?>public/third-party/js/bootstrap.js"></script>
 
-    <script src="<?=base_url()?>public/js/oli/dashboard/result.js"></script>
-    <script src="<?=base_url()?>public/js/oli/dashboard/event.js"></script>
-    <script src="<?=base_url()?>public/js/oli/dashboard/template.js"></script>
-    <script src="<?=base_url()?>public/js/oli/dashboard.js"></script>
+    <script src="<?=base_url()?>public/js/dashboard/result.js"></script>
+    <script src="<?=base_url()?>public/js/dashboard/event.js"></script>
+    <script src="<?=base_url()?>public/js/dashboard/template.js"></script>
+    <script src="<?=base_url()?>public/js/dashboard.js"></script>
     <script>
     $(function() {
         // Init the Dashboard Application
