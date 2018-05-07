@@ -366,6 +366,7 @@ class Api extends CI_Controller {
 
 		// $result = $this->db->affected_rows();
 
+		//Do not check the $result because if no affected rows happen they will think it is an error
 		// if ($result) {
 		// 	$this->output->set_output(json_encode([
 		// 		'result' => 1
@@ -374,7 +375,7 @@ class Api extends CI_Controller {
 		// 	return false;
 		// }
 
-		//Do not check the $result because if no affected rows happen they will think it is an error
+		
 		$this->output->set_output(json_encode([
 				'result' => 1
 			]));
@@ -387,7 +388,22 @@ class Api extends CI_Controller {
 	public function delete_note () {
 		$this->_require_login();
 
-		$note_id = $this->input->post('note_id');
+		$result = $this->note_model->delete([
+			'note_id' => $this->input->post('note_id'),
+			'user_id' => $this->session->userdata('user_id')
+		]);
+
+		if($result > 0) {
+
+			$this->output->set_output(json_encode([
+				'result' => 1
+			]));
+			return false;
+		}
+		$this->output->set_output(json_encode([
+			'result' => 0,
+			'message' => 'Could not delete record.'
+		]));
 		
 	}
 
