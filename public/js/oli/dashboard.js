@@ -34,9 +34,9 @@ var Dashboard = function() {
 		$.get('api/get_note', function(obj) {
 			var output = '';
 			for(var i = 0; i<obj.length; i++) {
-				output += Template.note(o[i]);
+				output += Template.note(obj[i]);
 			}
-			$('#list_note').html(output)
+			$('#list_note').html(output);
 		}, 'json');
 
 	};

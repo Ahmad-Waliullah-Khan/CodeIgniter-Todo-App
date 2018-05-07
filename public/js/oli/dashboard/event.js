@@ -44,8 +44,29 @@ var Event = function() {
     
     var create_note = function() {
         $("#create_note").submit(function(evt) {
-            console.log('create_note clicked');
-            return false;
+            // evt = evt || window.event;
+            evt.preventDefault();
+            // event.stopImmediatePropagation();
+            // console.log('create_todo clicked');
+
+            var url = $(this).attr('action');
+            var postData = $(this).serialize();
+
+            $.post(url, postData, function(obj){
+                if(obj.result == 1)
+                {
+                    Result.success('Note Created Successfully');
+                    var output = Template.note(obj.data[0]);
+                    $('#list_note').prepend(output);
+
+                    //Refresh the input fields after creating a note
+                    $('#note_title_input').val("");
+                    $('#note_body_input').val("");
+
+                } else {    
+                    Result.error(obj.error);
+                }
+            }, 'json');
         });
     };
     

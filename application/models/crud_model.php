@@ -35,9 +35,26 @@ class CRUD_model extends CI_Model {
 			}
 		}
 
+		if(is_numeric($order_by)){
+
+			$this->db->order_by($this->_primary_key, "desc");
+		}
+
+		if (is_array($order_by)) {
+			foreach ($order_by as $_key => $_value) {
+				$this->db->order_by($_key, $_value);
+			}
+		}
+
+		// if ($order_by != null) {
+		// 	$this->db->order_by($this->_primary_key, "desc");
+		// }
+
 		$query = $this->db->get($this->_table);
 
 		return $query->result_array();
+
+		
 	}
 
 	// ---------------------------------------------------------------------

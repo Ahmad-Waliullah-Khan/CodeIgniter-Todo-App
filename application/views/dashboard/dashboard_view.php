@@ -16,8 +16,8 @@
     <div id="dashboard-main" class="offset-md-1 col-md-7">
         <form id="create_note" class="form-horizontal" method="post" action="<?=site_url('api/create_note')?>">
             <div class="input-append">
-                <input tabindex="1" type="text" name="title" placeholder="Note Title" />
-                <input tabindex="3" type="submit" class="btn btn-success" value="Create" />
+                <input id="note_title_input" tabindex="1" type="text" name="title" placeholder="Note Title" />
+                <input id="note_body_input" tabindex="3" type="submit" class="btn btn-success" value="Create" />
             </div>
             
             <div class="clearfix"></div>
