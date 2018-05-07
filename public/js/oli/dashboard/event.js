@@ -31,7 +31,7 @@ var Event = function() {
                 if(obj.result == 1)
                 {
                     Result.success('Todo Created Successfully');
-                    var output = Template.todo(obj.data[0]);
+                    var output = Template.todo(obj.data);
                     $('#list_todo').prepend(output);
                     $('#todo_input').val("");
 
@@ -58,7 +58,7 @@ var Event = function() {
                 if(obj.result == 1)
                 {
                     Result.success('Note Created Successfully');
-                    var output = Template.note(obj.data[0]);
+                    var output = Template.note(obj.data);
                     $('#list_note').prepend(output);
 
                     //Refresh the input fields after creating a note
@@ -173,6 +173,10 @@ var Event = function() {
         $('body').on('click', '.todo_delete', function (evt) {
             evt.preventDefault();
 
+            //Prompt a confirmation before Deleting a todo
+            var c = confirm('Are you sure you want to delete?');
+            if (c== false) return false;
+
             var self = $(this).parent('div');
             var url = $(this).attr('href');
             var postData = {
@@ -198,6 +202,10 @@ var Event = function() {
     var delete_note = function() {
         $('body').on('click', '.note_delete', function (evt) {
             evt.preventDefault();
+
+            //Prompt a confirmation before Deleting a Note
+            var c = confirm('Are you sure you want to delete?');
+            if (c== false) return false;
 
             var self = $(this).parent('div');
             var url = $(this).attr('href');

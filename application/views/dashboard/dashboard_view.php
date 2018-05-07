@@ -9,7 +9,7 @@
         </form>
         
         <div id="list_todo">
-            <span class="ajax-loader-gray"></span>
+            <div class="ajax-loader"></div>
         </div>
     </div>
     
@@ -17,17 +17,17 @@
         <form id="create_note" class="form-horizontal" method="post" action="<?=site_url('api/create_note')?>">
             <div class="input-append">
                 <input id="note_title_input" tabindex="1" type="text" name="title" placeholder="Note Title" />
-                <input id="note_body_input" tabindex="3" type="submit" class="btn btn-success" value="Create" />
+                <input tabindex="3" type="submit" class="btn btn-success" value="Create" />
             </div>
             
             <div class="clearfix"></div>
             
-            <textarea tabindex="2" name="content"></textarea>
+            <textarea id="note_body_input" tabindex="2" name="content"></textarea>
             
         </form>
         
         <div id="list_note">
-            <span class="ajax-loader-gray"></span>
+            <span class="ajax-loader"></span>
         </div>
     </div>
     

@@ -196,7 +196,11 @@ class Api extends CI_Controller {
 			// $result = $query->result();
 			$this->output->set_output(json_encode([
 				'result' => 1,
-				'data' => $result
+				'data' => [
+					'todo_id' => $result,
+					'content' => $this->input->post('content'),
+					'complete' => 0
+				]
 			]));
 			return false;
 		}
@@ -332,7 +336,11 @@ class Api extends CI_Controller {
 			// $result = $query->result();
 			$this->output->set_output(json_encode([
 				'result' => 1,
-				'data' => $result
+				'data' => array(
+					'note_id' => $result,
+					'title' => $this->input->post('title'),
+					'content' => $this->input->post('content')
+				)
 			]));
 			return false;
 		}

@@ -17,3 +17,19 @@
 .todo_complete {
 	color : #b3b3b3;
 }
+
+/* Ajax loader */
+
+.ajax-loader , .ajax-loader-gray {
+	background: url("../img/ajax-loader-gif.gif");
+	width : 200px;
+	height : 200px;
+}
+
+.ajax-loader-gray {
+
+	background: url("../img/ajax-loader-gif-gray.gif");
+	width : 255;
+	height : 350px;
+
+}
