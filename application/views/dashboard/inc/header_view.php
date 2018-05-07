@@ -37,6 +37,13 @@
   </ul>
 
 </nav>
+
+<header>
+  <div class="jumbotron">
+    <h1 class="text-center">Oli's CI App</h1>
+  </div>
+  <hr>
+</header>
     
 <!-- start:wrapper -->
 <div class="container">
