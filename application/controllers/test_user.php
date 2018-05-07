@@ -161,13 +161,22 @@ class Test_User extends CI_Controller {
 			'login' => 'MJ'
 		], $user_id);
 
+		// $result = $this->user_model->update(
+		// 	['password' => 'MOFO', 'login' => 'Dog'],
+		// 	['login' => 'Oli']
+		// );
+
+		// $result = $this->user_model->insertUpdate(
+		// 	['password' => 'MF', 'login' => 'John'], '18'
+		// );
+
 		print_r($result);
 	}
 
 	// ---------------------------------------------------------------------
 	
 	public function test_delete($user_id) {
-		$result = $this->user_model->delete(3);
+		$result = $this->user_model->delete($user_id);
 		print_r($result);
 	}
 	
