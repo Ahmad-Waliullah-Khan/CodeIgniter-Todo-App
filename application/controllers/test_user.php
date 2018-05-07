@@ -149,7 +149,7 @@ class Test_User extends CI_Controller {
 	
 	public function test_insert() {
 		$result = $this->user_model->insert([
-			'login' => 'Oli'
+			'login' => 'Wali'
 		]);
 		print_r($result);
 	}
@@ -167,7 +167,7 @@ class Test_User extends CI_Controller {
 	// ---------------------------------------------------------------------
 	
 	public function test_delete($user_id) {
-		$result = $this->user_model->delete($user_id);
+		$result = $this->user_model->delete(3);
 		print_r($result);
 	}
 	

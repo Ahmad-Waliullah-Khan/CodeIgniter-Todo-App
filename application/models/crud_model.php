@@ -55,7 +55,7 @@ class CRUD_model extends CI_Model {
 	// ---------------------------------------------------------------------
 	
 	public function insert($data) {
-		$this->db->insert('user', $data);
+		$this->db->insert($this->_table, $data);
 
 		return $this->db->insert_id();
 
@@ -84,12 +84,27 @@ class CRUD_model extends CI_Model {
 	*
 	* @usage
 	* $result = $this->user_model->delete(2);
-	*
+	*			$this->user_model->delete(array('name' => 'Oli'))
 	*/
-	public function delete($user_id) {
+	public function delete($id) {
 
-		$this->db->delete('user', ['user_id' => $user_id]);
+		if(is_array($id))
+		{
+			foreach ($id as $_key => $_value) {
+				$this->db->where($_key, $_value);
+			}
+		}
 
+		elseif(is_numeric($id))
+		{
+			$this->db->where($this->_primary_key, $id);
+		}	
+
+		else {
+			die('You must pass a parameter to the DELETE() method.');
+		}
+
+		$this->db->delete($this->_table);
 		return $this->db->affected_rows();
 
 	}

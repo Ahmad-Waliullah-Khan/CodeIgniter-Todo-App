@@ -67,6 +67,8 @@ class Api extends CI_Controller {
 	
 	public function register() {
 
+
+
 		$this->output->set_content_type('application_json');
 
 
@@ -103,10 +105,14 @@ class Api extends CI_Controller {
 		//Load user model
 		$this->load->model('user_model');
 
+		$dateSql = date('Y-m-d h:i:sa');
+
 		$user_id = $this->user_model->insert([
 			'login' => $login,
 			'password' => hash('sha256', $password . SALT),
-			'email' => $email
+			'email' => $email,
+			'date_created' => $dateSql,
+			'date_modified' => $dateSql
 		]);
 
 	
