@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>CodeIgniter App</title>
+    <title>Oli's Todo and Note Taking App</title>
     <link rel="stylesheet" href="<?=base_url()?>public/third-party/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?=base_url()?>public/css/style.css" />
     
@@ -40,7 +40,7 @@
 
 <header>
   <div class="jumbotron">
-    <h1 class="text-center">Oli's CI App</h1>
+    <h1 class="text-center">Oli's Todo and Note Taking App</h1>
   </div>
   <hr>
 </header>

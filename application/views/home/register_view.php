@@ -1,52 +1,64 @@
 <div class="row">
-	<div class="col-md-6" >
+	<div class="offset-md-4 col-md-4" >
 
 		<!-- error message -->
 		<div id="register_form_error" class="alert alert-danger">
 			
-
-
 		</div>
 
-		<form id="register_form" class="form-horizontal" method="POST" action="<?php echo site_url('api/register') ?>">
-			
-			<div class="control-group">
-				<label class="control-label">Login</label>
-				<div class="controls">
-					<input type="text" name="login" class="input-xlarge"/>
+		<div class="card">
+		  <div class="card-header">
+		    Register 
+		  </div>
+		<div class="card-body">
+			<form id="register_form" class="form-horizontal" method="POST" action="<?php echo site_url('api/register') ?>">
+				
+				<div class="form-group"">
+					<label class="control-label">Ussername</label>
+					<div class="controls">
+						<input class="form-control" type="text" name="login" placeholder="Enter Username" required="required" />
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<label class="control-label">Email</label>
-				<div class="controls">
-					<input type="text" name="email" class="input-xlarge"/>
+				<div class="form-group"">
+					<label class="control-label">Email</label>
+					<div class="controls">
+						<input class="form-control" type="email" name="email" placeholder="Enter Email" required="required"/>
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<label class="control-label">Password</label>
-				<div class="controls">
-					<input type="password" name="password" class="input-xlarge"/>
+				<div class="form-group"">
+					<label class="control-label">Password</label>
+					<div class="controls">
+						<input class="form-control" type="password" name="password" placeholder="Enter Password" required="required"/>
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<label class="control-label">Confirm Password</label>
-				<div class="controls">
-					<input type="password" name="confirm_password" class="input-xlarge"/>
+				<div class="form-group"">
+					<label class="control-label">Confirm Password</label>
+					<div class="controls">
+						<input class="form-control" type="password" name="confirm_password" placeholder="Re Enter Password" required="required"/>
+					</div>
 				</div>
-			</div>
 
-			<div class="control-group">
-				<div class="controls">
-					<input type="submit" name="submit" value="Register" class="btn btn-primary"/>
+				<div class="form-group"">
+					<div class="controls">
+						<input class="form-control btn btn-primary" type="submit" name="submit" value="Register" />
+					</div>
 				</div>
-			</div>
 
-		</form>
+				<div class="form-group"">
+					<div class="controls">
+						<a class="form-control btn btn-info" href="<?php echo site_url('home');?>">Back</a>
+					</div>
+				</div>
 
-		<a href="<?php echo site_url('home');?>">Back</a>
+			</form>
+		</div>
+	</div>
+
+		
+		
 
 	</div>
 </div>
