@@ -8,13 +8,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-fspl_autoload_register(function ($class) {
+fspl_autoload_register(function($class) {
 	$class = strtolower($class);
 
 	if($class == 'crud_model') {
 		require APPPATH .'models/' . $class . '.php';
 	}
-}
+});
 
 
 /*
