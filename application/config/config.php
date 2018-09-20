@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 spl_autoload_register(function($class) {
 	$class = strtolower($class);
 
-	if($class == 'crud_model') {
+	if($class == 'Crud_model') {
 		require APPPATH .'models/' . $class . '.php';
 	}
 });
