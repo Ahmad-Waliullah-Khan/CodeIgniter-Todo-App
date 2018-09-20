@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
-fspl_autoload_register(function($class) {
+spl_autoload_register(function($class) {
 	$class = strtolower($class);
 
 	if($class == 'crud_model') {
