@@ -1,6 +1,6 @@
 <?php 
 
-class CRUD_model extends CI_Model {
+class Crud_model extends CI_Model {
 
 	protected $_table = null;
 	protected $_primary_key = null;
