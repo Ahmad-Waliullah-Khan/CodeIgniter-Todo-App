@@ -59,6 +59,15 @@
 .jumbotron-header {
 	font-family: 'Patrick Hand', cursive;
 }
+
+.jumbotron-header {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.navbar-brand {
+  font-family: 'Patrick Hand', cursive;
+}
+
 /*
 .jumbotron {
   /*position:relative;*/

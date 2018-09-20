@@ -11,10 +11,10 @@
 	<script src="<?php echo base_url() ?>public/third-party/js/jquery.js"></script>
 	<script src="<?php echo base_url(); ?>public/third-party/js/bootstrap.js"></script>
 </head>
-<body class="bg-image">
+<body>
 
 <nav class="navbar navbar-dark bg-primary">
-  <a class="navbar-brand" href="http://oli.net.in"><img id="navbar_brand_img" src="<?php echo base_url(); ?>public/third-party/img/pencil-8x.png">  Todo and Note Taking App</a>
+  <a class="navbar-brand" href="http://oli.net.in"><img id="navbar_brand_img" src="<?php echo base_url(); ?>public/third-party/img/pencil-8x.png"> Simple Todo and Note Taking App</a>
 
   </div>
 </nav>

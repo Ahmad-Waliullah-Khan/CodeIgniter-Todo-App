@@ -20,30 +20,37 @@
     </script>
 </head>
 <body>
-    
-<nav class="navbar navbar-expand-sm bg-light">
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="#">Dashboard</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">User</a>
-    </li>
-    <li class="nav-item">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="http://oli.net.in"><img id="navbar_brand_img" src="<?php echo base_url(); ?>public/third-party/img/pencil-8x.png"> Simple Todo and Note Taking App</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item acive">
+        <a class="nav-link" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">User</a>
+      </li>
+      <li class="nav-item">
       <a class="nav-link" href="<?php echo site_url('dashboard/logout') ?>">Logout</a>
     </li>
-  </ul>
+    </ul>
 
+  </div>
 </nav>
 
-<header>
-  <div class="jumbotron">
-    <h1 class="text-center">Oli's Todo and Note Taking App</h1>
+<div id="header">
+    <div class="jumbotron jumbotron-billboard ">
+      <div class="img">
+        <h2 style="font-family: 'Patrick Hand', cursive;" class="text-center jumbotron-header" style=>Simple Todo and Note Taking App</h2>
+      </div>
+      <hr>
+      <p style="font-family: 'Patrick Hand', cursive;" class="text-center lead">A Todo and Note taking solution for minimalists </p>
   </div>
-  <hr>
-</header>
+</div id="header">
     
 <!-- start:wrapper -->
 <div class="container">
