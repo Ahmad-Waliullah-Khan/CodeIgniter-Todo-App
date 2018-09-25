@@ -4,8 +4,6 @@
     <title>Oli's Todo and Note Taking App</title>
     <link rel="stylesheet" href="<?=base_url()?>public/third-party/css/bootstrap.min.css" />
     <link rel="stylesheet" href="<?=base_url()?>public/css/style.css" />
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-
     
     <script src="<?=base_url()?>public/third-party/js/jquery.js"></script>
     <script src="<?=base_url()?>public/third-party/js/bootstrap.js"></script>
