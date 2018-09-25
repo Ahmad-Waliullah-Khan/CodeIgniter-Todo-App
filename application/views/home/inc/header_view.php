@@ -7,6 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/css/style.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>public/third-party/css/open-iconic-bootstrap.css">
 	<link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+
 
 	<script src="<?php echo base_url() ?>public/third-party/js/jquery.js"></script>
 	<script src="<?php echo base_url(); ?>public/third-party/js/bootstrap.js"></script>
